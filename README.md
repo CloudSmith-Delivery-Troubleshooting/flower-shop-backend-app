@@ -41,7 +41,7 @@ A C# backend server application for a Flower Shop service that provides APIs for
 
 ### Prerequisites
 
-- .NET 7.0 SDK
+- .NET 8.0 SDK
 - SQL Server (local or remote)
 
 ### Setup

@@ -43,7 +43,6 @@ public class OrdersController : ControllerBase
     {
         var updatedOrder = await _orderRepository.UpdateOrderAsync(id, order);
         if (updatedOrder == null)
-            return NotFound();
 
         return updatedOrder;
     }

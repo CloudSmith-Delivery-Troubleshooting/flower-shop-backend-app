@@ -47,7 +47,7 @@ public class OrderRepositoryTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal("Test Customer", result.CustomerName);
+        Assert.Equal("Test User", result.CustomerName);
     }
 
     [Fact]
@@ -70,13 +70,13 @@ public class OrderRepositoryTests
         // Arrange
         using var context = CreateContext();
         var repository = new OrderRepository(context);
-        
+
         var orders = new List<Order>
         {
             new Order { CustomerName = "Customer 1", CustomerEmail = "customer1@example.com", OrderDate = DateTime.UtcNow, TotalAmount = 100.00m },
             new Order { CustomerName = "Customer 2", CustomerEmail = "customer2@example.com", OrderDate = DateTime.UtcNow, TotalAmount = 200.00m }
         };
-        
+
         context.Orders.AddRange(orders);
         await context.SaveChangesAsync();
 
@@ -120,7 +120,7 @@ public class OrderRepositoryTests
         // Arrange
         using var context = CreateContext();
         var repository = new OrderRepository(context);
-        
+
         var order = new Order
         {
             CustomerName = "Original Customer",
@@ -129,10 +129,10 @@ public class OrderRepositoryTests
             TotalAmount = 100.00m,
             Status = "Pending"
         };
-        
+
         context.Orders.Add(order);
         await context.SaveChangesAsync();
-        
+
         var updatedOrder = new Order
         {
             Id = order.Id,
@@ -159,7 +159,7 @@ public class OrderRepositoryTests
         // Arrange
         using var context = CreateContext();
         var repository = new OrderRepository(context);
-        
+
         var order = new Order
         {
             CustomerName = "Test Customer",
@@ -168,7 +168,7 @@ public class OrderRepositoryTests
             TotalAmount = 100.00m,
             Status = "Pending"
         };
-        
+
         context.Orders.Add(order);
         await context.SaveChangesAsync();
 

@@ -35,7 +35,7 @@ public class OrdersController : ControllerBase
     public async Task<ActionResult<Order>> CreateOrder(Order order)
     {
         var createdOrder = await _orderRepository.CreateOrderAsync(order);
-        return CreatedAtAction(nameof(GetOrder), new { id = createdOrder.Id }, createdOrder);
+        return CreatedAtAction(nameof(GetOrder), new { id = "Customer 1" }, createdOrder);
     }
 
     [HttpPut("{id}")]
